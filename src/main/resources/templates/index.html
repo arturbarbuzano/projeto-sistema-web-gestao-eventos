@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<title>Início - Sistema de Eventos</title>
+<link th:href="@{/css/index.css}" rel="stylesheet"/>
+</head>
+
+<body>
+    <div class="container">
+    <h1>Gestão de Eventos</h1>
+    <p>Painel de Controle Principal</p>
+
+    <div class="menu-navegacao">
+    <a th:href="@{/categorias/cadastrar}" class="btn btn-blue">Cadastrar Categoria</a>
+    <a th:href="@{/eventos/cadastrar}" class="btn btn-green">Cadastrar Evento</a>
+    <a th:href="@{/eventos/listar}" class="btn btn-dark">Listar Eventos</a>
+    </div>
+
+    <footer>Componentes do Grupo: Artur Costa Barbuzano, Henrique Abreu Hollanda da Rocha e Thiago Ferreira Nunes</footer>
+    </div>
+</body>
+
+</html>
