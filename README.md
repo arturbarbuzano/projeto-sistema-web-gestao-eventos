@@ -13,6 +13,7 @@ O sistema permite:
 
 - Java
 - Spring Boot
+- JPA
 - Thymeleaf
 - HTML5
 - CSS3
