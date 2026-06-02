@@ -1,0 +1,53 @@
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<title>Lista de Eventos</title>
+<link th:href="@{/css/listagem-eventos.css}" rel="stylesheet"/>
+</head>
+<body>
+    <div class="container-principal">
+        <div class="header-area">
+            <h2>Eventos Agendados</h2>
+            <div class="menu-topo">
+                <a th:href="@{/}" class="btn-nav">Menu Principal</a>
+                <a th:href="@{/categorias/cadastrar}" class="btn-nav">Cadastrar Categoria</a>
+                <a th:href="@{/eventos/cadastrar}" class="btn-nav">Cadastrar Evento</a>
+            </div>
+        </div>
+
+
+
+        <div class="table-container">
+            <table th:if="${not #lists.isEmpty(eventos)}">
+            <thead>
+            <tr>
+            <th>Nome do Evento</th>
+            <th>Categoria</th>
+            <th>Data</th>
+            <th>Local</th>
+            <th>Descrição</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="ev : ${eventos}">
+            <td th:text="${ev.nome}"></td>
+            <td><span class="badge-categoria" th:text="${ev.categoria.nome}"></span></td>
+            <td th:text="${#temporals.format(ev.data, 'dd/MM/yyyy')}"></td>
+            <td th:text="${ev.local}"></td>
+            <td th:text="${ev.descricao}"></td>
+            </tr>
+            </tbody>
+            </table>
+
+            <div th:if="${#lists.isEmpty(eventos)}" class="empty-alert">
+            Nenhum evento registrado até o momento. Utilize os botões acima para iniciar os registros!
+            </div>
+        </div>
+
+        <br>
+        <p>Componentes do Grupo: Artur Costa Barbuzano, Henrique Abreu Hollanda da Rocha e Thiago Ferreira Nunes</p>
+    </div>
+</body>
+</html>

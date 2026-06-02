@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Cadastrar Categoria</title>
+    <link th:href="@{/css/cadastro-categoria.css}" rel="stylesheet"/>
+</head>
+<body>
+    <div class="container">
+        <div class="menu-topo">
+            <a th:href="@{/}" class="btn-nav">Menu Principal</a>
+            <a th:href="@{/eventos/cadastrar}" class="btn-nav">Cadastrar Evento</a>
+            <a th:href="@{/eventos/listar}" class="btn-nav">Listar Eventos</a>
+        </div>
+
+        <h2>Nova Categoria</h2>
+
+        <div th:if="${mensagem}" class="alert-sucesso" th:text="${mensagem}"></div>
+
+        <form th:action="@{/categorias/salvar}" th:object="${categoria}" method="post">
+            <div class="form-group">
+                <label class="form-label" for="nome">Nome da Categoria:</label>
+                <input type="text" id="nome" th:field="*{nome}" required placeholder="Ex: Reunião, Festa, Jogo">
+            </div>
+
+            <div class="form-group">
+                <label class="form-label" for="descricao">Descrição Simples:</label>
+                <textarea id="descricao" th:field="*{descricao}" rows="3" required placeholder="Insira detalhes resumidos da categoria..."></textarea>
+            </div>
+
+            <button type="submit" class="btn-submit">Salvar Categoria</button>
+        </form>
+
+        <br>
+        <p>Componentes do Grupo: Artur Costa Barbuzano, Henrique Abreu Hollanda da Rocha e Thiago Ferreira Nunes</p>
+    </div>
+</body>
+</html>
