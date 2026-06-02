@@ -22,28 +22,28 @@
 
         <div class="table-container">
             <table th:if="${not #lists.isEmpty(eventos)}">
-            <thead>
-            <tr>
-            <th>Nome do Evento</th>
-            <th>Categoria</th>
-            <th>Data</th>
-            <th>Local</th>
-            <th>Descrição</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr th:each="ev : ${eventos}">
-            <td th:text="${ev.nome}"></td>
-            <td><span class="badge-categoria" th:text="${ev.categoria.nome}"></span></td>
-            <td th:text="${#temporals.format(ev.data, 'dd/MM/yyyy')}"></td>
-            <td th:text="${ev.local}"></td>
-            <td th:text="${ev.descricao}"></td>
-            </tr>
-            </tbody>
+                <thead>
+                    <tr>
+                        <th>Nome do Evento</th>
+                        <th>Categoria</th>
+                        <th>Data</th>
+                        <th>Local</th>
+                        <th>Descrição</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr th:each="ev : ${eventos}">
+                        <td th:text="${ev.nome}"></td>
+                        <td><span class="badge-categoria" th:text="${ev.categoria.nome}"></span></td>
+                        <td th:text="${#temporals.format(ev.data, 'dd/MM/yyyy')}"></td>
+                        <td th:text="${ev.local}"></td>
+                        <td th:text="${ev.descricao}"></td>
+                    </tr>
+                </tbody>
             </table>
 
             <div th:if="${#lists.isEmpty(eventos)}" class="empty-alert">
-            Nenhum evento registrado até o momento. Utilize os botões acima para iniciar os registros!
+                Nenhum evento registrado até o momento. Utilize os botões acima para iniciar os registros!
             </div>
         </div>
 

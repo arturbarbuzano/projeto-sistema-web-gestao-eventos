@@ -27,8 +27,8 @@
             <div class="form-group">
                 <label class="form-label" for="categoria">Categoria Relacionada:</label>
                 <select id="categoria" th:field="*{categoria}" required>
-                <option value="" disabled selected>Selecione uma Categoria...</option>
-                <option th:each="cat : ${categorias}" th:value="${cat.id}" th:text="${cat.nome}"></option>
+                    <option value="" disabled selected>Selecione uma Categoria...</option>
+                    <option th:each="cat : ${categorias}" th:value="${cat.id}" th:text="${cat.nome}"></option>
                 </select>
                 <div class="help-text">A categoria desejada não aparece? <a th:href="@{/categorias/cadastrar}">Cadastre uma nova aqui</a>.</div>
             </div>
