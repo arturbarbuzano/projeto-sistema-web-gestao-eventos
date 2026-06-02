@@ -32,11 +32,11 @@
             </thead>
             <tbody>
             <tr th:each="ev : ${eventos}">
-            <td th:text="${ev.nome}" style="font-weight: 600; color: #2d3748;"></td>
+            <td th:text="${ev.nome}"></td>
             <td><span class="badge-categoria" th:text="${ev.categoria.nome}"></span></td>
             <td th:text="${#temporals.format(ev.data, 'dd/MM/yyyy')}"></td>
             <td th:text="${ev.local}"></td>
-            <td th:text="${ev.descricao}" style="color: #4a5568;"></td>
+            <td th:text="${ev.descricao}"></td>
             </tr>
             </tbody>
             </table>
